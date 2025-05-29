@@ -231,47 +231,47 @@ public class CodigoInfinito {
 
     // Desafio 7: Loop for com condição ausente (loop infinito)
     static void desafioSete() {
-        System.out.println("\n☕ Máquina de café que nunca para de servir.");
+        System.out.println("\n Máquina de café que nunca para de servir.");
         System.out.println("for (;;) {\n    System.out.println(\"Servindo café...\");\n}");
 
         boolean acertou = false;
         do {
-            System.out.println("\n💡 Qual é o problema com esse loop?");
+            System.out.println("\n Qual é o problema com esse loop?");
             System.out.println("1 - É um loop infinito por falta de condicao.");
             System.out.println("2 - Esta correto, ele servira 10 cafés.");
             System.out.println("3 - Está incompleto por faltar o tipo do loop.");
 
             if (lerOpcao() == 1) {
-                System.out.println("\n✅ Boa, " + nomeJogador + "! Esse é um loop infinito.");
+                System.out.println("\n Boa, " + nomeJogador + "! Esse é um loop infinito.");
                 acertou = true;
             } else {
-                System.out.println("\n❌ Resposta errada. O café continua jorrando!");
+                System.out.println("\n Resposta errada. O café continua jorrando!");
             }
         } while (!acertou);
     }
 
     // Desafio 8: Uso de continue em um loop
     static void desafioOito() {
-        System.out.println("\n🌀 Gerador de números ímpares bugado.");
+        System.out.println("\n Gerador de números ímpares bugado.");
         System.out.println("for (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    System.out.println(i);\n}");
 
         boolean acertou = false;
         do {
-            System.out.println("\n💡 O que esse código imprime?");
+            System.out.println("\n O que esse código imprime?");
             System.out.println("1 - 1 3");
             System.out.println("2 - 0 1 2 3 4");
             System.out.println("3 - 2 4");
 
             if (lerOpcao() == 1) {
-                System.out.println("\n✅ Excelente, " + nomeJogador + "! Só imprime os ímpares.");
+                System.out.println("\n Excelente, " + nomeJogador + "! Só imprime os ímpares.");
                 acertou = true;
             } else {
-                System.out.println("\n❌ Nao é isso! Lembre-se: `continue` pula para a próxima iteração.");
+                System.out.println("\n Nao é isso! Lembre-se: `continue` pula para a próxima iteração.");
             }
         } while (!acertou);
     }
 
     // Desafio 9: Loop regressivo
     static void desafioNove() {
-        System.out.println("\n🔁 Contador regressivo:");
+        System.out.println("\n Contador regressivo:");
         System.out.println("for (int i = 10; i >= 1; i--) {\n
