@@ -271,7 +271,44 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
-    // Desafio 9: Loop regressivo
+   // Desafio 9: Loop regressivo
     static void desafioNove() {
         System.out.println("\n Contador regressivo:");
-        System.out.println("for (int i = 10; i >= 1; i--) {\n
+        System.out.println("for (int i = 10; i >= 1; i--) {\n    System.out.println(i);\n}");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\n Qual é a saída desse código?");
+            System.out.println("1 - Conta de 1 até 10");
+            System.out.println("2 - Conta de 10 até 1");
+            System.out.println("3 - Loop infinito");
+
+            if (lerOpcao() == 2) {
+                System.out.println("\n Corretíssimo, " + nomeJogador + "! Contagem regressiva concluída.");
+                acertou = true;
+            } else {
+                System.out.println("\n Tente novamente! Preste atenção na condição e no decremento.");
+            }
+        } while (!acertou);
+    }
+
+    // Desafio 10: Loop com soma acumulativa
+    static void desafioDez() {
+        System.out.println("\n DESAFIO 10: Acumulador de Pontos");
+        System.out.println("int soma = 0;\nfor (int i = 1; i <= 5; i++) {\n    soma += i;\n}\nSystem.out.println(soma);");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\n Qual o valor final impresso?");
+            System.out.println("1 - 15");
+            System.out.println("2 - 10");
+            System.out.println("3 - 5");
+
+            if (lerOpcao() == 1) {
+                System.out.println("\n Você dominou o poder da soma acumulativa! Jogo finalizado com sucesso!");
+                acertou = true;
+            } else {
+                System.out.println("\n Ainda não! Some os valores de 1 a 5 para resolver.");
+            }
+        } while (!acertou);
+    }
