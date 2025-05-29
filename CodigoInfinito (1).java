@@ -1,153 +1,229 @@
 import java.util.Scanner;
-     public class CodigoInfinito {
 
+public class CodigoInfinito {
 
-             static Scanner scanner = new Scanner(System.in);
-             static String nomeJogador = "";
+    // Scanner usado para capturar entradas do jogador
+    static Scanner scanner = new Scanner(System.in);
 
-             public static void main(String[] args) {
-                 exibirBoasVindas();
-                 menu();
-                 scanner.close();
-             }
+    // Armazena o nome do jogador para personalizar a narrativa
+    static String nomeJogador = "";
 
-             static void exibirBoasVindas() {
-                 System.out.println("=========================================");
-                 System.out.println("🧩 Bem-vindo a Maldicao do Codigo Infinito");
-                 System.out.println("=========================================");
-                 System.out.println("\n📖 Introducao:");
+    public static void main(String[] args) {
+        exibirBoasVindas();  // Exibe a introdução do jogo
+        menu();              // Exibe o menu principal
+        scanner.close();     // Fecha o scanner no final do programa
+    }
 
-                 // ✍️ Aqui você pode colocar a introdução completa da história
-                 System.out.println("Um jovem programador e contratado por uma empresa misteriosa...");
-                 System.out.println("Aos poucos, ele percebe que os funcionarios estao presos em loops infinitos.");
-                 System.out.println("Agora, cabe a ele usar seus conhecimentos em programacao para libertar a todos.\n");
-             }
+    // Método que mostra a introdução do jogo
+    static void exibirBoasVindas() {
+        System.out.println("=========================================");
+        System.out.println("🧩 Bem-vindo à Maldição do Código Infinito");
+        System.out.println("=========================================");
+        System.out.println("\n📖 Introdução:");
+        System.out.println("Você é um jovem programador contratado pela enigmática empresa INFINITY TECH.");
+        System.out.println("Ao chegar para o primeiro dia, percebe algo estranho: os funcionários estão presos em loops eternos.");
+        System.out.println("Cabe a você resolver enigmas e quebrar os códigos para libertá-los da maldição...\n");
+    }
 
-             static void menu() {
-                 int opcao = 0;
+    // Método do menu principal, com 4 opções: jogar, instruções, créditos e sair
+    static void menu() {
+        int opcao = 0;
+        while (opcao != 4) {
+            System.out.println("\n📁 MENU PRINCIPAL");
+            System.out.println("1 - Iniciar Jornada");
+            System.out.println("2 - Instruções");
+            System.out.println("3 - Créditos");
+            System.out.println("4 - Sair");
+            System.out.print("Escolha uma opção: ");
 
-                 while (opcao != 4) {
-                     System.out.println("\n📁 MENU PRINCIPAL");
-                     System.out.println("1 - Iniciar Jornada");
-                     System.out.println("2 - Instrucoes");
-                     System.out.println("3 - Creditos");
-                     System.out.println("4 - Sair");
-                     System.out.print("Escolha uma opcao: ");
-
-                     try {
-                         opcao = Integer.parseInt(scanner.nextLine());
-                     } catch (NumberFormatException e) {
-                         System.out.println("Entrada invalida! Digite um numero.");
-                         continue;
-                     }
-
-                     switch (opcao) {
-                         case 1:
-                             iniciarJogo();
-                             break;
-                         case 2:
-                             System.out.println("\n📚 INSTRUCOES:\n" +
-                                     "Voce e um jovem programador contratado por uma empresa misteriosa.\n" +
-                                     "Logo percebe que todos estao presos em lacos de repeticao.\n" +
-                                     "Resolva os enigmas usando lacos em Java para liberta-los!");
-                             break;
-                         case 3:
-                             System.out.println("\nJogo criado por, Caio Domingues Pires, Carlos Henrique, Gabriel Teles e Guilherme Menezes.");
-                             System.out.println("Mencao Honrosa, Professor Takeo.");
-                             break;
-                         case 4:
-                             System.out.println("Encerrando...");
-                             break;
-                         default:
-                             System.out.println("Opcao invalida!");
-                     }
-                 }
-             }
-
-             static void iniciarJogo() {
-                 System.out.print("\nDigite o nome do seu personagem: ");
-                 nomeJogador = scanner.nextLine();
-
-                 System.out.println("\n🖥️ Bem-vindo, " + nomeJogador + ".");
-                 System.out.println("Voce chega para seu primeiro dia na misteriosa empresa INFINITY TECH.");
-                 System.out.println("Mas algo estranho esta acontecendo...");
-
-                 primeiroDesafio();
-                 SegundoDesafio();
-             }
-
-             static void primeiroDesafio() {
-                 System.out.println("\n📌 Um funcionario se aproxima e diz:");
-    System.out.println("\"" + nomeJogador + ", estamos presos em um loop! O cafe nunca acaba e os e-mails se repetem!\"");
-    System.out.println("Voce olha para o codigo no monitor:");
-    System.out.println("\nwhile (true) {\n    System.out.println(\"Enviando e-mail...\");\n}");
-
-    int resposta;
-    boolean acertou = false; // Variável para controlar a saída do loop
-
-    do {
-        System.out.println("\n💡 Como voce quebra esse laco infinito?");
-        System.out.println("1 - Usando break quando a condicao for atendida");
-        System.out.println("2 - Deixando rodar para sempre");
-        System.out.println("3 - Colocando if sem break");
-
-        System.out.print("Escolha a opcao correta: ");
-        resposta = lerOpcao(); 
-
-        if (resposta == 1) {
-            System.out.println("\n✅ Excelente, " + nomeJogador + "! Voce quebrou o primeiro loop.");
-            acertou = true;
-        } else {
-            System.out.println("\n❌ Ops, resposta errada. Os e-mails continuam infinitamente...");
-            System.out.println("Tente novamente!"); // Mensagem para o jogador tentar de novo
-        }
-    } while (!acertou); // O loop continua enquanto 'acertou' for falso
-}
-
-             static int lerOpcao() {
-                 try {
-                     return Integer.parseInt(scanner.nextLine());
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                     return -1;
+                System.out.println("Entrada inválida! Digite um número.");
+                continue;
             }
-             }             
 
-     public static void SegundoDesafio(){
-         System.out.println("\nAgora voce chega a um setor onde robos deveriam estar organizando componentes. Um pequeno robo, modelo 'Astro Bot', esta parado.");
-    System.out.println("\"Erro de inicializacao do ciclo de contagem!\", ele apita. ziiz-ziiz \"Minha rotina de 'for' esta incompleta!\"");
-    System.out.println("Voce olha para o painel do Astro Bot e ve o seguinte trecho de codigo faltando partes essenciais:");
-    System.out.println("\nfor (int i = ___; i ___ ___; i___) {");
-    System.out.println("\nO robo precisa contar 5 componentes.");
-    
-         int resposta;
-         boolean acertou = false;
-    
-    do {
-        System.out.println("\nVoce precisa completar o laco 'for' para que o Astro Bot execute 5 iteracoes, simulando a contagem de componentes. As lacunas sao: `inicializacao`; `condicao de parada`; `incremento`.,\n" +
-"        Qual a combinacao correta para completar o laco 'for'?,");
-         System.out.println("1 - int i = 0; i < 5; i++");
-         System.out.println("2 - int i = 1; i <= 5; i--");
-         System.out.println("3 - int i = 0; i > 5; i++");
-         System.out.print("Escolha a opcao correta: ");
-        resposta = lerOpcao(); 
-
-        if (resposta == 1) {
-            System.out.println("\n✅ Excelente, " + nomeJogador + "! Voce quebrou o segundo loop.");
-            acertou = true;
-        } else {
-            System.out.println("\n❌ Ops, resposta errada. O Astro Bot continua sem conseguir contar");
-            System.out.println("Tente novamente!"); // Mensagem para o jogador tentar de novo
+            // Switch case que lida com a opção escolhida pelo jogador
+            switch (opcao) {
+                case 1:
+                    iniciarJogo();
+                    break;
+                case 2:
+                    System.out.println("\n📚 INSTRUÇÕES:");
+                    System.out.println("Você enfrentará desafios com laços de repetição (for, while, do-while).");
+                    System.out.println("Escolha as opções corretas para quebrar os loops e libertar os funcionários.");
+                    break;
+                case 3:
+                    System.out.println("\n🎮 CRÉDITOS:");
+                    System.out.println("Jogo criado por Caio Domingues, Carlos Henrique, Gabriel Teles e Guilherme Menezes.");
+                    System.out.println("Menção honrosa: Professor Takeo.");
+                    break;
+                case 4:
+                    System.out.println("Encerrando...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
         }
-    } while (!acertou); // O loop continua enquanto 'acertou' for falso
-}
+    }
 
-           
-            
-         
-     }
-     
-     
-     
-     
-     
-     
+    // Método para iniciar o jogo e chamar os desafios em sequência
+    static void iniciarJogo() {
+        System.out.print("\nDigite o nome do seu personagem: ");
+        nomeJogador = scanner.nextLine();
+
+        // Introdução narrativa do início da jornada
+        System.out.println("\n🖥️ Bem-vindo, " + nomeJogador + ".");
+        System.out.println("Você entra na empresa e ouve vozes pedindo ajuda de todos os lados...");
+        System.out.println("Prepare-se para quebrar os códigos e libertar as almas presas no sistema!");
+
+        // Chamada dos desafios em sequência
+        primeiroDesafio();
+        segundoDesafio();
+        terceiroDesafio();
+        quartoDesafio();
+        quintoDesafio();
+        sextoDesafio();
+    }
+
+    // Método auxiliar para ler opções numéricas e evitar erro de entrada inválida
+    static int lerOpcao() {
+        try {
+            return Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
+    // DESAFIO 1: While infinito com e-mails
+    static void primeiroDesafio() {
+        System.out.println("\n🔒 DESAFIO 1: O Loop do E-mail Infinito");
+        System.out.println("\"" + nomeJogador + ", estamos presos em um loop! O café nunca acaba e os e-mails se repetem!\"");
+        System.out.println("while (true) {\n    System.out.println(\"Enviando e-mail...\");\n}");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\n💡 Como você quebra esse laço infinito?");
+            System.out.println("1 - Usando break quando a condição for atendida");
+            System.out.println("2 - Deixando rodar para sempre");
+            System.out.println("3 - Colocando if sem break");
+            System.out.print("Escolha a opção correta: ");
+
+            if (lerOpcao() == 1) {
+                System.out.println("\n✅ Correto! Você quebrou o primeiro loop.");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ Resposta errada. Tente novamente!");
+            }
+        } while (!acertou);
+    }
+
+    // DESAFIO 2: Preenchendo corretamente um for loop
+    static void segundoDesafio() {
+        System.out.println("\n🔒 DESAFIO 2: O Robo Contador");
+        System.out.println("Astro Bot: \"Erro de inicialização do ciclo de contagem!\"");
+        System.out.println("for (int i = ___; i ___ ___; i___)");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\nQual a combinação correta?");
+            System.out.println("1 - int i = 0; i < 5; i++");
+            System.out.println("2 - int i = 1; i <= 5; i--");
+            System.out.println("3 - int i = 0; i > 5; i++");
+
+            if (lerOpcao() == 1) {
+                System.out.println("\n✅ Astro Bot voltou a contar com precisão!");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ Astro Bot ainda está travado. Tente de novo!");
+            }
+        } while (!acertou);
+    }
+
+    // DESAFIO 3: Entendendo do-while
+    static void terceiroDesafio() {
+        System.out.println("\n🔒 DESAFIO 3: A Porta com Código Secreto");
+        System.out.println("A porta mostra o seguinte código:");
+        System.out.println("int senha = 1234;\ndo {\n    System.out.println(\"Digite a senha\");\n} while (input != senha);");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\nQual estrutura representa corretamente o funcionamento do laço acima?");
+            System.out.println("1 - while (input == senha)");
+            System.out.println("2 - do...while garante execução pelo menos uma vez");
+            System.out.println("3 - input == senha no começo impede execução");
+
+            if (lerOpcao() == 2) {
+                System.out.println("\n✅ Porta destrancada!");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ Código incorreto! A porta continua trancada.");
+            }
+        } while (!acertou);
+    }
+
+    // DESAFIO 4: Varrer uma matriz com dois laços for
+    static void quartoDesafio() {
+        System.out.println("\n🔒 DESAFIO 4: A Matriz Fantasma");
+        System.out.println("Você precisa varrer uma matriz 3x3 para identificar bugs.");
+        System.out.println("Qual estrutura você usaria?");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\n1 - Um único for");
+            System.out.println("2 - Dois for aninhados");
+            System.out.println("3 - while sem contadores");
+
+            if (lerOpcao() == 2) {
+                System.out.println("\n✅ Você varreu a matriz corretamente e encontrou os bugs!");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ Isso não cobre todas as linhas e colunas!");
+            }
+        } while (!acertou);
+    }
+
+    // DESAFIO 5: Loop para contagem de horas e minutos
+    static void quintoDesafio() {
+        System.out.println("\n🔒 DESAFIO 5: O Relógio Parado");
+        System.out.println("O relógio da empresa está travado no mesmo horário.");
+        System.out.println("for (int h = 0; h < 24; h++) { for (int m = 0; m < 60; m++) { ... } }");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\nO que esse código representa?");
+            System.out.println("1 - Loop de contagem de tempo em horas e minutos");
+            System.out.println("2 - Loop de contagem de segundos apenas");
+            System.out.println("3 - Um loop infinito");
+
+            if (lerOpcao() == 1) {
+                System.out.println("\n✅ O tempo voltou a passar! Você restaurou o relógio.");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ O relógio continua travado. Pense de novo!");
+            }
+        } while (!acertou);
+    }
+
+    // DESAFIO 6: Primalidade com for loop
+    static void sextoDesafio() {
+        System.out.println("\n🔒 DESAFIO 6: O Enigma Final");
+        System.out.println("Você precisa detectar se um número é primo, mas o loop está errado:");
+        System.out.println("for (int i = 2; i < num; i++) {\n    if (num % i == 0) return false;\n}");
+
+        boolean acertou = false;
+        do {
+            System.out.println("\nQual o problema com esse código?");
+            System.out.println("1 - Ele nunca verifica divisores");
+            System.out.println("2 - O loop deveria ir até num + 1");
+            System.out.println("3 - Está correto para verificar primalidade");
+
+            if (lerOpcao() == 3) {
+                System.out.println("\n🏆 Parabéns, " + nomeJogador + "! Você completou todos os desafios e quebrou a maldição da INFINITY TECH!");
+                acertou = true;
+            } else {
+                System.out.println("\n❌ Ainda há bugs no sistema... tente mais uma vez!");
+            }
+        } while (!acertou);
+    }
+}
