@@ -227,3 +227,102 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 }
+static void desafioSete() {
+    System.out.println("\n☕ Voce encontra uma maquina de café que nunca para de servir.");
+    System.out.println("Ao lado, um terminal mostra o seguinte código:");
+    System.out.println("for (;;) {\n    System.out.println(\"Servindo café...\");\n}");
+
+    int resposta;
+    boolean acertou = false;
+
+    do {
+        System.out.println("\n💡 Qual é o problema com esse loop?");
+        System.out.println("1 - É um loop infinito por falta de condicao.");
+        System.out.println("2 - Esta correto, ele servira 10 cafés.");
+        System.out.println("3 - Está incompleto por faltar o tipo do loop.");
+        System.out.print("Escolha a opção correta: ");
+        resposta = lerOpcao();
+
+        if (resposta == 1) {
+            System.out.println("\n✅ Boa, " + nomeJogador + "! Esse é um loop infinito.");
+            acertou = true;
+        } else {
+            System.out.println("\n❌ Resposta errada. O café continua jorrando!");
+        }
+    } while (!acertou);
+}
+static void desafioOito() {
+    System.out.println("\n🌀 Voce entra em uma sala com um gerador de numeros ímpares bugado.");
+    System.out.println("O código que você encontra:");
+    System.out.println("for (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    System.out.println(i);\n}");
+
+    int resposta;
+    boolean acertou = false;
+
+    do {
+        System.out.println("\n💡 O que esse código imprime?");
+        System.out.println("1 - 1 3");
+        System.out.println("2 - 0 1 2 3 4");
+        System.out.println("3 - 2 4");
+        System.out.print("Escolha a opção correta: ");
+        resposta = lerOpcao();
+
+        if (resposta == 1) {
+            System.out.println("\n✅ Excelente, " + nomeJogador + "! Só imprime os ímpares.");
+            acertou = true;
+        } else {
+            System.out.println("\n❌ Nao é isso! Lembre-se: `continue` pula para a próxima iteração.");
+        }
+    } while (!acertou);
+}
+static void desafioNove() {
+    System.out.println("\n🔁 Um alarme está prestes a disparar! Você vê um contador regressivo no código:");
+    System.out.println("for (int i = 10; i >= 1; i--) {\n    System.out.println(i);\n}");
+
+    int resposta;
+    boolean acertou = false;
+
+    do {
+        System.out.println("\n💡 O que acontece com esse loop?");
+        System.out.println("1 - Conta de 1 a 10.");
+        System.out.println("2 - Conta de 10 até 1.");
+        System.out.println("3 - É um loop infinito.");
+        System.out.print("Escolha a opção correta: ");
+        resposta = lerOpcao();
+
+        if (resposta == 2) {
+            System.out.println("\n✅ Ótimo trabalho, " + nomeJogador + "! O contador desce corretamente.");
+            acertou = true;
+        } else {
+            System.out.println("\n❌ Ops! Tente analisar melhor a inicialização e decremento.");
+        }
+    } while (!acertou);
+}
+static void desafioDez() {
+    System.out.println("\n🔒 O cofre final está protegido por um código baseado na sequência de Fibonacci.");
+    System.out.println("O sistema pede os primeiros 6 números da sequência.");
+    System.out.println("Sequência esperada: 0, 1, 1, 2, 3, 5");
+
+    int resposta;
+    boolean acertou = false;
+
+    do {
+        System.out.println("\n💡 Qual dessas opções representa corretamente os 6 primeiros números da sequência?");
+        System.out.println("1 - 1, 1, 2, 3, 5, 8");
+        System.out.println("2 - 0, 1, 1, 2, 3, 5");
+        System.out.println("3 - 0, 2, 2, 4, 6, 10");
+        System.out.print("Escolha a opção correta: ");
+        resposta = lerOpcao();
+
+        if (resposta == 2) {
+            System.out.println("\n🎉 Parabéns, " + nomeJogador + "! Você desbloqueou o cofre final e quebrou a maldição do código infinito!");
+            acertou = true;
+        } else {
+            System.out.println("\n❌ Sequência incorreta. Lembre-se da lógica de Fibonacci: cada número é a soma dos dois anteriores.");
+        }
+    } while (!acertou);
+}
+
+
+
+
