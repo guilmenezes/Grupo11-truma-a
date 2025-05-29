@@ -2,15 +2,19 @@ import java.util.Scanner;
 
 public class CodigoInfinito {
 
+    // Scanner usado para capturar entradas do jogador
     static Scanner scanner = new Scanner(System.in);
+
+    // Armazena o nome do jogador para personalizar a narrativa
     static String nomeJogador = "";
 
     public static void main(String[] args) {
-        exibirBoasVindas();
-        menu();
-        scanner.close();
+        exibirBoasVindas(); // Mostra introdução inicial
+        menu();             // Exibe o menu principal
+        scanner.close();    // Fecha o scanner ao final do jogo
     }
 
+    // Método que exibe a introdução narrativa do jogo
     static void exibirBoasVindas() {
         System.out.println("=========================================");
         System.out.println("Bem-vindo à Maldição do Código Infinito");
@@ -21,6 +25,7 @@ public class CodigoInfinito {
         System.out.println("Cabe a você resolver enigmas e quebrar os códigos para libertá-los da maldição...\n");
     }
 
+    // Menu principal do jogo
     static void menu() {
         int opcao = 0;
         while (opcao != 4) {
@@ -38,6 +43,7 @@ public class CodigoInfinito {
                 continue;
             }
 
+            // Executa a ação conforme a opção escolhida
             switch (opcao) {
                 case 1:
                     iniciarJogo();
@@ -61,14 +67,17 @@ public class CodigoInfinito {
         }
     }
 
+    // Inicia o jogo após a escolha do jogador
     static void iniciarJogo() {
         System.out.print("\nDigite o nome do seu personagem: ");
         nomeJogador = scanner.nextLine();
 
+        // Introdução narrativa da jornada
         System.out.println("\n🖥️ Bem-vindo, " + nomeJogador + ".");
         System.out.println("Você entra na empresa e ouve vozes pedindo ajuda de todos os lados...");
         System.out.println("Prepare-se para quebrar os códigos e libertar as almas presas no sistema!");
 
+        // Sequência de desafios do jogo
         primeiroDesafio();
         segundoDesafio();
         terceiroDesafio();
@@ -81,14 +90,18 @@ public class CodigoInfinito {
         desafioDez();
     }
 
+    // Método para ler opções numéricas com tratamento de erro
     static int lerOpcao() {
         try {
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            return -1;
+            return -1; // Retorna -1 em caso de entrada inválida
         }
     }
 
+    // ========================== DESAFIOS ===========================
+
+    // Desafio 1: Loop infinito com while
     static void primeiroDesafio() {
         System.out.println("\n DESAFIO 1: O Loop do E-mail Infinito");
         System.out.println("\"" + nomeJogador + ", estamos presos em um loop! O café nunca acaba e os e-mails se repetem!\"");
@@ -100,6 +113,7 @@ public class CodigoInfinito {
             System.out.println("1 - Usando break quando a condição for atendida");
             System.out.println("2 - Deixando rodar para sempre");
             System.out.println("3 - Colocando if sem break");
+            System.out.print("Escolha a opção correta: ");
 
             if (lerOpcao() == 1) {
                 System.out.println("\n Correto! Você quebrou o primeiro loop.");
@@ -110,6 +124,7 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 2: Preenchendo um for loop corretamente
     static void segundoDesafio() {
         System.out.println("\n DESAFIO 2: O Robo Contador");
         System.out.println("Astro Bot: \"Erro de inicialização do ciclo de contagem!\"");
@@ -131,6 +146,7 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 3: Compreensão do do-while
     static void terceiroDesafio() {
         System.out.println("\n DESAFIO 3: A Porta com Código Secreto");
         System.out.println("int senha = 1234;\ndo {\n    System.out.println(\"Digite a senha\");\n} while (input != senha);");
@@ -151,10 +167,10 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 4: Loop aninhado para varrer matriz
     static void quartoDesafio() {
         System.out.println("\n DESAFIO 4: A Matriz Fantasma");
         System.out.println("Você precisa varrer uma matriz 3x3 para identificar bugs.");
-        System.out.println("Qual estrutura você usaria?");
 
         boolean acertou = false;
         do {
@@ -171,6 +187,7 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 5: Loop para contar horas e minutos
     static void quintoDesafio() {
         System.out.println("\n DESAFIO 5: O Relógio Parado");
         System.out.println("for (int h = 0; h < 24; h++) { for (int m = 0; m < 60; m++) { ... } }");
@@ -191,15 +208,16 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 6: Verificação de número primo
     static void sextoDesafio() {
         System.out.println("\n DESAFIO 6: O Enigma Final");
-        System.out.println("for (int i = 2; i < num; i++) {\n    if (num % i == 0) return false;\n}");
+        System.out.println("Código de primalidade:\nfor (int i = 2; i < num; i++) {\n    if (num % i == 0) return false;\n}");
 
         boolean acertou = false;
         do {
             System.out.println("\nQual o problema com esse código?");
-            System.out.println("1 - Ele nunca verifica divisores");
-            System.out.println("2 - O loop deveria ir até num + 1");
+            System.out.println("1 - Nunca verifica divisores");
+            System.out.println("2 - Deveria ir até num + 1");
             System.out.println("3 - Está correto para verificar primalidade");
 
             if (lerOpcao() == 3) {
@@ -211,15 +229,16 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 7: Loop for com condição ausente (loop infinito)
     static void desafioSete() {
-        System.out.println("\n☕ Você encontra uma máquina de café que nunca para de servir.");
-        System.out.println("Código exibido:\nfor (;;) {\n    System.out.println(\"Servindo café...\");\n}");
+        System.out.println("\n☕ Máquina de café que nunca para de servir.");
+        System.out.println("for (;;) {\n    System.out.println(\"Servindo café...\");\n}");
 
         boolean acertou = false;
         do {
             System.out.println("\n💡 Qual é o problema com esse loop?");
-            System.out.println("1 - É um loop infinito por falta de condição.");
-            System.out.println("2 - Está correto, ele servirá 10 cafés.");
+            System.out.println("1 - É um loop infinito por falta de condicao.");
+            System.out.println("2 - Esta correto, ele servira 10 cafés.");
             System.out.println("3 - Está incompleto por faltar o tipo do loop.");
 
             if (lerOpcao() == 1) {
@@ -231,9 +250,10 @@ public class CodigoInfinito {
         } while (!acertou);
     }
 
+    // Desafio 8: Uso de continue em um loop
     static void desafioOito() {
-        System.out.println("\n🌀 Você entra em uma sala com um gerador de números ímpares bugado.");
-        System.out.println("Código: for (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    System.out.println(i);\n}");
+        System.out.println("\n🌀 Gerador de números ímpares bugado.");
+        System.out.println("for (int i = 0; i < 5; i++) {\n    if (i % 2 == 0) continue;\n    System.out.println(i);\n}");
 
         boolean acertou = false;
         do {
@@ -246,48 +266,12 @@ public class CodigoInfinito {
                 System.out.println("\n✅ Excelente, " + nomeJogador + "! Só imprime os ímpares.");
                 acertou = true;
             } else {
-                System.out.println("\n❌ Não é isso! Lembre-se: `continue` pula para a próxima iteração.");
+                System.out.println("\n❌ Nao é isso! Lembre-se: `continue` pula para a próxima iteração.");
             }
         } while (!acertou);
     }
 
+    // Desafio 9: Loop regressivo
     static void desafioNove() {
-        System.out.println("\n🔁 Um alarme está prestes a disparar! Você vê um contador regressivo:");
-        System.out.println("Código: for (int i = 10; i >= 1; i--) {\n    System.out.println(i);\n}");
-
-        boolean acertou = false;
-        do {
-            System.out.println("\n💡 O que acontece com esse loop?");
-            System.out.println("1 - Conta de 1 a 10.");
-            System.out.println("2 - Conta de 10 até 1.");
-            System.out.println("3 - É um loop infinito.");
-
-            if (lerOpcao() == 2) {
-                System.out.println("\n✅ Ótimo trabalho, " + nomeJogador + "! O contador desce corretamente.");
-                acertou = true;
-            } else {
-                System.out.println("\n❌ Ops! Tente analisar melhor a inicialização e decremento.");
-            }
-        } while (!acertou);
-    }
-
-    static void desafioDez() {
-        System.out.println("\n🔒 O cofre final está protegido por um código baseado na sequência de Fibonacci.");
-        System.out.println("O sistema pede os primeiros 6 números: 0, 1, 1, 2, 3, 5");
-
-        boolean acertou = false;
-        do {
-            System.out.println("\n💡 Qual dessas opções representa corretamente os 6 primeiros números da sequência?");
-            System.out.println("1 - 1, 1, 2, 3, 5, 8");
-            System.out.println("2 - 0, 1, 1, 2, 3, 5");
-            System.out.println("3 - 0, 2, 2, 4, 6, 10");
-
-            if (lerOpcao() == 2) {
-                System.out.println("\n🎉 Parabéns, " + nomeJogador + "! Você desbloqueou o cofre final e quebrou a maldição do código infinito!");
-                acertou = true;
-            } else {
-                System.out.println("\n❌ Sequência incorreta. Lembre-se da lógica de Fibonacci: cada número é a soma dos dois anteriores.");
-            }
-        } while (!acertou);
-    }
-}
+        System.out.println("\n🔁 Contador regressivo:");
+        System.out.println("for (int i = 10; i >= 1; i--) {\n
