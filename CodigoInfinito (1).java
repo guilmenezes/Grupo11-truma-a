@@ -133,7 +133,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nComo você quebra esse laço infinito?");
-            System.out.println("1 - Usando break quando a condição for atendida"); // Correto
+            System.out.println("1 - Usando break quando a condição for atendida");
             System.out.println("2 - Deixando rodar para sempre");
             System.out.println("3 - Colocando if sem break");
             System.out.print("Escolha a opção correta: ");
@@ -148,7 +148,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nQual a combinação correta?");
-            System.out.println("1 - int i = 0; i < 5; i++"); // Correto: vai de 0 a 4
+            System.out.println("1 - int i = 0; i < 5; i++"); 
             System.out.println("2 - int i = 1; i <= 5; i--");
             System.out.println("3 - int i = 0; i > 5; i++");
             System.out.print("Escolha a opção correta: ");
@@ -164,7 +164,7 @@ public class Main {
         do {
             System.out.println("\nQual estrutura representa corretamente o funcionamento do laço acima?");
             System.out.println("1 - while (input == senha)");
-            System.out.println("2 - do...while garante execução pelo menos uma vez"); // Correto
+            System.out.println("2 - do...while garante execução pelo menos uma vez"); 
             System.out.println("3 - input == senha no começo impede execução");
             System.out.print("Escolha a opção correta: ");
             opcao = lerOpcaoComResultadoCorreto(2);
@@ -177,7 +177,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\n1 - Um único for");
-            System.out.println("2 - Dois for aninhados"); // Correto
+            System.out.println("2 - Dois for aninhados"); 
             System.out.println("3 - while sem contadores");
             System.out.print("Escolha a opção correta: ");
             opcao = lerOpcaoComResultadoCorreto(2);
@@ -191,7 +191,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nO que esse código representa?");
-            System.out.println("1 - Loop de contagem de tempo em horas e minutos"); // Correto
+            System.out.println("1 - Loop de contagem de tempo em horas e minutos");
             System.out.println("2 - Loop de contagem de segundos apenas");
             System.out.println("3 - Um loop infinito");
             System.out.print("Escolha a opção correta: ");
@@ -208,7 +208,7 @@ public class Main {
             System.out.println("\nQual o problema com esse código?");
             System.out.println("1 - Nunca verifica divisores");
             System.out.println("2 - Deveria ir até num + 1");
-            System.out.println("3 - Está correto para verificar primalidade"); // Correto
+            System.out.println("3 - Está correto para verificar primalidade");
             System.out.print("Escolha a opção correta: ");
             opcao = lerOpcaoComResultadoCorreto(3);
         } while (opcao != 3);
@@ -221,7 +221,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nQual é o problema com esse loop?");
-            System.out.println("1 - É um loop infinito por falta de condicao."); // Correto
+            System.out.println("1 - É um loop infinito por falta de condicao."); 
             System.out.println("2 - Está correto, ele servirá 10 cafés.");
             System.out.println("3 - Está incompleto por faltar o tipo do loop.");
             System.out.print("Escolha a opção correta: ");
@@ -236,7 +236,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nO que esse código imprime?");
-            System.out.println("1 - 1 3"); // Correto: apenas ímpares são impressos
+            System.out.println("1 - 1 3"); 
             System.out.println("2 - 0 1 2 3 4");
             System.out.println("3 - 2 4");
             System.out.print("Escolha a opção correta: ");
@@ -252,7 +252,7 @@ public class Main {
         do {
             System.out.println("\nQual é a saída desse código?");
             System.out.println("1 - Conta de 1 até 10");
-            System.out.println("2 - Conta de 10 até 1"); // Correto
+            System.out.println("2 - Conta de 10 até 1"); 
             System.out.println("3 - Loop infinito");
             System.out.print("Escolha a opção correta: ");
             opcao = lerOpcaoComResultadoCorreto(2);
@@ -266,7 +266,7 @@ public class Main {
         int opcao;
         do {
             System.out.println("\nQual o valor final impresso?");
-            System.out.println("1 - 15"); // Correto
+            System.out.println("1 - 15"); 
             System.out.println("2 - 10");
             System.out.println("3 - 5");
             System.out.print("Escolha a opção correta: ");
